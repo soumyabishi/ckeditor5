@@ -6,6 +6,7 @@
 // The editor creator to use.
 import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
@@ -44,6 +45,7 @@ export default class InlineEditor extends InlineEditorBase {}
 InlineEditor.builtinPlugins = [
 	Alignment,
 	UploadAdapter,
+	SimpleUploadAdapter,
 	BlockQuote,
 	Bold,
 	CKFinder,
