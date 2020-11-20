@@ -7,6 +7,7 @@
 import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
@@ -46,6 +47,7 @@ InlineEditor.builtinPlugins = [
 	Alignment,
 	UploadAdapter,
 	SimpleUploadAdapter,
+	EasyImage,
 	BlockQuote,
 	Bold,
 	CKFinder,
