@@ -102,6 +102,10 @@ InlineEditor.defaultConfig = { toolbar: {
 			'imageTextAlternative'
 		]
 	},
+	simpleUpload: {
+		// The URL that the images are uploaded to.
+		uploadUrl: 'https://heyuser.el.r.appspot.com/api/v1/image/'
+	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };
