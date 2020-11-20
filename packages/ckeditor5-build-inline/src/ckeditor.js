@@ -5,9 +5,8 @@
 
 // The editor creator to use.
 import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
-import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
-import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
 import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor.js';
@@ -29,10 +28,8 @@ import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
-import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
-
 
 
 
@@ -40,9 +37,8 @@ export default class InlineEditor extends InlineEditorBase {}
 
 // Plugins to include in the build.
 InlineEditor.builtinPlugins = [
+	SimpleUploadAdapter,
 	Alignment,
-	BlockQuote,
-	Base64UploadAdapter,
 	Bold,
 	Essentials,
 	FontBackgroundColor,
@@ -64,14 +60,12 @@ InlineEditor.builtinPlugins = [
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
-	Strikethrough,
 	TextTransformation,
 	Underline
 ];
 
 // Editor configuration.
-InlineEditor.defaultConfig = {
-	toolbar: {
+InlineEditor.defaultConfig = { toolbar: {
 		items: [
 			'heading',
 			'|',
@@ -86,7 +80,6 @@ InlineEditor.defaultConfig = {
 			'fontColor',
 			'|',
 			'imageUpload',
-			'blockQuote',
 			'mediaEmbed',
 			'|',
 			'fontSize',
@@ -94,17 +87,19 @@ InlineEditor.defaultConfig = {
 			'horizontalLine',
 			'htmlEmbed',
 			'strikethrough',
-			'underline',
-			'|',
-			'undo',
-			'redo'
+			'underline'
 		]
 	},
 	image: {
+		styles: ['alignLeft', 'alignCenter', 'alignRight'],
 		toolbar: [
-			'imageTextAlternative',
-			'imageStyle:full',
-			'imageStyle:side'
+			'imageStyle:alignLeft',
+			'imageStyle:alignCenter',
+			'imageStyle:alignRight',
+			'|',
+			'imageResize',
+			'|',
+			'imageTextAlternative'
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
