@@ -5,11 +5,10 @@
 
 // The editor creator to use.
 import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
-import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
 import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor.js';
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor.js';
@@ -42,10 +41,9 @@ export default class InlineEditor extends InlineEditorBase {}
 // Plugins to include in the build.
 InlineEditor.builtinPlugins = [
 	Alignment,
-	SimpleUploadAdapter,
 	BlockQuote,
+	Base64UploadAdapter,
 	Bold,
-	CKFinder,
 	Essentials,
 	FontBackgroundColor,
 	FontColor,
@@ -91,7 +89,6 @@ InlineEditor.defaultConfig = {
 			'blockQuote',
 			'mediaEmbed',
 			'|',
-			'CKFinder',
 			'fontSize',
 			'highlight',
 			'horizontalLine',
